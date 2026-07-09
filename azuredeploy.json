@@ -5,15 +5,15 @@
     "_generator": {
       "name": "bicep",
       "version": "0.37.4.10188",
-      "templateHash": "2236757734151055658"
+      "templateHash": "3709681795001131061"
     }
   },
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "West US 2",
+      "defaultValue": "[resourceGroup().location]",
       "metadata": {
-        "description": "Resource group location"
+        "description": "Resource group location. Defaults to the resource group's region so the \"Deploy to Azure\" button deploys where you have quota/capacity (capacity is per-region). deploy.ps1 sets this explicitly from the bicepparam file."
       }
     },
     "environmentPrefix": {
