@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.37.4.10188",
-      "templateHash": "3709681795001131061"
+      "templateHash": "11438464867843159789"
     }
   },
   "parameters": {
@@ -38,16 +38,16 @@
     },
     "driverVmSize": {
       "type": "string",
-      "defaultValue": "Standard_F4as_v6",
+      "defaultValue": "Standard_B4ms",
       "metadata": {
-        "description": "Driver computer VM size"
+        "description": "Driver computer VM size. Defaults to a broadly-available burstable (B-series) size for the one-click button; deploy.ps1 uses a compute-optimized size from the bicepparam file. Note: burstable CPU may throttle during long test runs."
       }
     },
     "sutVmSize": {
       "type": "string",
-      "defaultValue": "Standard_D8ls_v5",
+      "defaultValue": "Standard_B8ms",
       "metadata": {
-        "description": "SUT computer VM size"
+        "description": "SUT computer VM size. Defaults to a broadly-available burstable (B-series) size for the one-click button; deploy.ps1 uses a compute-optimized size from the bicepparam file."
       }
     },
     "driverOsType": {
@@ -830,7 +830,7 @@
             "_generator": {
               "name": "bicep",
               "version": "0.37.4.10188",
-              "templateHash": "6501508884445422924"
+              "templateHash": "2422064474792096127"
             }
           },
           "parameters": {
@@ -862,14 +862,14 @@
             },
             "driverVmSize": {
               "type": "string",
-              "defaultValue": "Standard_F4as_v6",
+              "defaultValue": "Standard_B4ms",
               "metadata": {
                 "description": "Driver computer VM size"
               }
             },
             "sutVmSize": {
               "type": "string",
-              "defaultValue": "Standard_D8ls_v5",
+              "defaultValue": "Standard_B8ms",
               "metadata": {
                 "description": "SUT computer VM size"
               }
