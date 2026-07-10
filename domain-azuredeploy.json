@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.37.4.10188",
-      "templateHash": "1427998297973421204"
+      "templateHash": "8231704971476760611"
     }
   },
   "parameters": {
@@ -32,8 +32,9 @@
     },
     "adminPassword": {
       "type": "securestring",
+      "minLength": 12,
       "metadata": {
-        "description": "Admin password for all VMs (also used for the domain admin / test accounts)"
+        "description": "Admin password for all VMs (also used for the domain admin / test accounts). 12+ chars; must meet Azure Windows complexity: 3 of upper/lower/digit/symbol."
       }
     },
     "domainName": {
@@ -265,9 +266,9 @@
     },
     "enableDiskEncryption": {
       "type": "bool",
-      "defaultValue": true,
+      "defaultValue": false,
       "metadata": {
-        "description": "Enable Azure Disk Encryption (creates a Key Vault for encryption keys)"
+        "description": "Enable Azure Disk Encryption (creates a Key Vault for encryption keys). Defaults OFF for the one-click button: ADE is applied by deploy.ps1 as a post-deploy step (which the Portal button cannot run), so for the button the vault would be created but never used. Managed disks are platform-encrypted at rest regardless. deploy.ps1 sets this true via the bicepparam file."
       }
     }
   },
@@ -885,7 +886,7 @@
             "_generator": {
               "name": "bicep",
               "version": "0.37.4.10188",
-              "templateHash": "18211567060517784226"
+              "templateHash": "8748705400647635797"
             }
           },
           "parameters": {
@@ -1035,8 +1036,7 @@
                       }
                     }
                   }
-                ],
-                "enableIPForwarding": true
+                ]
               }
             },
             {
@@ -1056,8 +1056,7 @@
                       }
                     }
                   }
-                ],
-                "enableIPForwarding": true
+                ]
               }
             },
             {

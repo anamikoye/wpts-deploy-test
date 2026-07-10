@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.37.4.10188",
-      "templateHash": "11438464867843159789"
+      "templateHash": "5483358829988048095"
     }
   },
   "parameters": {
@@ -32,8 +32,9 @@
     },
     "adminPassword": {
       "type": "securestring",
+      "minLength": 12,
       "metadata": {
-        "description": "Admin password for VMs"
+        "description": "Admin password for VMs (12+ chars; must meet Azure Windows complexity: 3 of upper/lower/digit/symbol)"
       }
     },
     "driverVmSize": {
@@ -211,9 +212,9 @@
     },
     "enableDiskEncryption": {
       "type": "bool",
-      "defaultValue": true,
+      "defaultValue": false,
       "metadata": {
-        "description": "Enable Azure Disk Encryption (creates a Key Vault for encryption keys)"
+        "description": "Enable Azure Disk Encryption (creates a Key Vault for encryption keys). Defaults OFF for the one-click button: ADE is applied by deploy.ps1 as a post-deploy step (which the Portal button cannot run), so for the button the vault would be created but never used. Managed disks are platform-encrypted at rest regardless. deploy.ps1 sets this true via the bicepparam file."
       }
     }
   },
