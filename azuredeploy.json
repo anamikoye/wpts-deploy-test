@@ -204,7 +204,7 @@
     },
     "dscPackageZipUrl": {
       "type": "string",
-      "defaultValue": "https://github.com/microsoft/WindowsProtocolTestSuites/releases/download/fileserver-workgroup-deploy-button-v1/Workgroup-Package.zip",
+      "defaultValue": "https://github.com/anamikoye/wpts-deploy-test/releases/download/test-v1/Workgroup-Package.zip",
       "metadata": {
         "description": "URL to the DSC package zip file (contains DSC/ folder, Config.json, Tools.json). Defaults to the public GitHub Release asset that the \"Deploy to Azure\" button consumes; the on-VM Custom Script Extension injects the real admin password into the package's placeholder Config.json at deploy time. deploy.ps1 overrides this with a freshly built, credential-baked package."
       }
