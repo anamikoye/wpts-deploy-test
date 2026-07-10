@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.37.4.10188",
-      "templateHash": "1866469960673378809"
+      "templateHash": "11438464867843159789"
     }
   },
   "parameters": {
@@ -345,7 +345,7 @@
             "_generator": {
               "name": "bicep",
               "version": "0.37.4.10188",
-              "templateHash": "17142657823311430217"
+              "templateHash": "12819594621090303515"
             }
           },
           "parameters": {
@@ -637,12 +637,6 @@
               },
               "properties": {
                 "publicIPAllocationMethod": "Static",
-                "ipTags": [
-                  {
-                    "ipTagType": "FirstPartyUsage",
-                    "tag": "/NonProd"
-                  }
-                ],
                 "dnsSettings": {
                   "domainNameLabel": "[format('{0}-{1}', variables('bastionName'), uniqueString(resourceGroup().id))]"
                 }
