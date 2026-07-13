@@ -5,13 +5,14 @@
     "_generator": {
       "name": "bicep",
       "version": "0.37.4.10188",
-      "templateHash": "8231704971476760611"
+      "templateHash": "17864372847379685159"
     }
   },
   "parameters": {
     "location": {
       "type": "string",
       "defaultValue": "[resourceGroup().location]",
+      "minLength": 1,
       "metadata": {
         "description": "Resource group location. Defaults to the resource group's region so the \"Deploy to Azure\" button deploys where you have quota/capacity. deploy.ps1 sets this explicitly from the bicepparam file."
       }
@@ -19,6 +20,7 @@
     "environmentPrefix": {
       "type": "string",
       "defaultValue": "fstest",
+      "minLength": 1,
       "metadata": {
         "description": "Environment name prefix"
       }
@@ -26,6 +28,7 @@
     "adminUsername": {
       "type": "string",
       "defaultValue": "testadmin",
+      "minLength": 1,
       "metadata": {
         "description": "Admin username for VMs"
       }
@@ -40,6 +43,7 @@
     "domainName": {
       "type": "string",
       "defaultValue": "contoso.com",
+      "minLength": 1,
       "metadata": {
         "description": "Domain name"
       }
@@ -47,6 +51,7 @@
     "domainNetBiosName": {
       "type": "string",
       "defaultValue": "CONTOSO",
+      "minLength": 1,
       "metadata": {
         "description": "Domain NetBIOS name"
       }
@@ -54,6 +59,7 @@
     "dcVmSize": {
       "type": "string",
       "defaultValue": "Standard_B4ms",
+      "minLength": 1,
       "metadata": {
         "description": "Domain Controller VM size. Defaults to a broadly-available burstable (B-series) size for the one-click button; deploy.ps1 uses a compute-optimized size from the bicepparam file."
       }
@@ -80,6 +86,7 @@
     "driverVmSize": {
       "type": "string",
       "defaultValue": "Standard_B4ms",
+      "minLength": 1,
       "metadata": {
         "description": "Driver computer VM size. Defaults to a broadly-available burstable (B-series) size for the one-click button."
       }
@@ -87,6 +94,7 @@
     "sutVmSize": {
       "type": "string",
       "defaultValue": "Standard_B4ms",
+      "minLength": 1,
       "metadata": {
         "description": "SUT computer VM size. Defaults to a broadly-available burstable (B-series) size for the one-click button."
       }
@@ -158,6 +166,7 @@
     "vnetAddressPrefix": {
       "type": "string",
       "defaultValue": "192.168.0.0/16",
+      "minLength": 1,
       "metadata": {
         "description": "Virtual network address space"
       }
@@ -165,6 +174,7 @@
     "bastionSubnetPrefix": {
       "type": "string",
       "defaultValue": "192.168.0.0/26",
+      "minLength": 1,
       "metadata": {
         "description": "Azure Bastion subnet address prefix (must be /26 or larger)"
       }
@@ -172,6 +182,7 @@
     "external1SubnetPrefix": {
       "type": "string",
       "defaultValue": "192.168.1.0/24",
+      "minLength": 1,
       "metadata": {
         "description": "External1 subnet address prefix"
       }
@@ -179,6 +190,7 @@
     "external2SubnetPrefix": {
       "type": "string",
       "defaultValue": "192.168.2.0/24",
+      "minLength": 1,
       "metadata": {
         "description": "External2 subnet address prefix"
       }
@@ -197,6 +209,7 @@
     "dcExternal1Ip": {
       "type": "string",
       "defaultValue": "192.168.1.10",
+      "minLength": 1,
       "metadata": {
         "description": "Domain Controller External1 IP address"
       }
@@ -204,6 +217,7 @@
     "dcExternal2Ip": {
       "type": "string",
       "defaultValue": "192.168.2.10",
+      "minLength": 1,
       "metadata": {
         "description": "Domain Controller External2 IP address"
       }
@@ -211,6 +225,7 @@
     "driverExternal1Ip": {
       "type": "string",
       "defaultValue": "192.168.1.111",
+      "minLength": 1,
       "metadata": {
         "description": "Driver computer External1 IP address"
       }
@@ -218,6 +233,7 @@
     "driverExternal2Ip": {
       "type": "string",
       "defaultValue": "192.168.2.111",
+      "minLength": 1,
       "metadata": {
         "description": "Driver computer External2 IP address"
       }
@@ -225,6 +241,7 @@
     "sutExternal1Ip": {
       "type": "string",
       "defaultValue": "192.168.1.11",
+      "minLength": 1,
       "metadata": {
         "description": "SUT computer External1 IP address"
       }
@@ -232,6 +249,7 @@
     "sutExternal2Ip": {
       "type": "string",
       "defaultValue": "192.168.2.11",
+      "minLength": 1,
       "metadata": {
         "description": "SUT computer External2 IP address"
       }
@@ -246,6 +264,7 @@
     "autoShutdownTime": {
       "type": "string",
       "defaultValue": "20:00",
+      "minLength": 1,
       "metadata": {
         "description": "Auto-shutdown time (HH:mm in UTC)"
       }
@@ -253,6 +272,7 @@
     "autoShutdownTimeZone": {
       "type": "string",
       "defaultValue": "UTC",
+      "minLength": 1,
       "metadata": {
         "description": "Auto-shutdown timezone"
       }
