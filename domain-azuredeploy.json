@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.41.2.15936",
-      "templateHash": "14723375120802749846"
+      "version": "0.37.4.10188",
+      "templateHash": "14832988100991853768"
     }
   },
   "parameters": {
@@ -295,7 +295,7 @@
   "resources": [
     {
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2025-04-01",
+      "apiVersion": "2022-09-01",
       "name": "[format('{0}-phase1', parameters('environmentPrefix'))]",
       "properties": {
         "expressionEvaluationOptions": {
@@ -373,8 +373,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.41.2.15936",
-              "templateHash": "10927896103480720001"
+              "version": "0.37.4.10188",
+              "templateHash": "5305692692252092922"
             }
           },
           "parameters": {
@@ -537,7 +537,7 @@
           "resources": [
             {
               "type": "Microsoft.Resources/deployments",
-              "apiVersion": "2025-04-01",
+              "apiVersion": "2022-09-01",
               "name": "[format('{0}-disk-encryption-vault', parameters('environmentPrefix'))]",
               "properties": {
                 "expressionEvaluationOptions": {
@@ -561,8 +561,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.41.2.15936",
-                      "templateHash": "4607274212381451172"
+                      "version": "0.37.4.10188",
+                      "templateHash": "13929165660475341590"
                     }
                   },
                   "parameters": {
@@ -625,7 +625,7 @@
             },
             {
               "type": "Microsoft.Resources/deployments",
-              "apiVersion": "2025-04-01",
+              "apiVersion": "2022-09-01",
               "name": "[format('{0}-network-deployment', parameters('environmentPrefix'))]",
               "properties": {
                 "expressionEvaluationOptions": {
@@ -658,8 +658,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.41.2.15936",
-                      "templateHash": "12821840106501354868"
+                      "version": "0.37.4.10188",
+                      "templateHash": "3897230433864719058"
                     }
                   },
                   "parameters": {
@@ -1017,7 +1017,7 @@
             },
             {
               "type": "Microsoft.Resources/deployments",
-              "apiVersion": "2025-04-01",
+              "apiVersion": "2022-09-01",
               "name": "[format('{0}-bastion-deployment', parameters('environmentPrefix'))]",
               "properties": {
                 "expressionEvaluationOptions": {
@@ -1032,7 +1032,7 @@
                     "value": "[parameters('environmentPrefix')]"
                   },
                   "bastionSubnetId": {
-                    "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.bastionSubnetId.value]"
+                    "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.bastionSubnetId.value]"
                   },
                   "bastionSku": {
                     "value": "[parameters('bastionSku')]"
@@ -1044,8 +1044,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.41.2.15936",
-                      "templateHash": "2172508135876233986"
+                      "version": "0.37.4.10188",
+                      "templateHash": "14919081938689329756"
                     }
                   },
                   "parameters": {
@@ -1140,7 +1140,7 @@
             },
             {
               "type": "Microsoft.Resources/deployments",
-              "apiVersion": "2025-04-01",
+              "apiVersion": "2022-09-01",
               "name": "[format('{0}-dc-deployment', parameters('environmentPrefix'))]",
               "properties": {
                 "expressionEvaluationOptions": {
@@ -1176,10 +1176,10 @@
                     "value": "[parameters('domainNetBiosName')]"
                   },
                   "external1SubnetId": {
-                    "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.external1SubnetId.value]"
+                    "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.external1SubnetId.value]"
                   },
                   "external2SubnetId": {
-                    "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.external2SubnetId.value]"
+                    "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.external2SubnetId.value]"
                   },
                   "dcExternal1Ip": {
                     "value": "[parameters('dcExternal1Ip')]"
@@ -1206,8 +1206,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.41.2.15936",
-                      "templateHash": "14418326704213203235"
+                      "version": "0.37.4.10188",
+                      "templateHash": "15574397437128060768"
                     }
                   },
                   "parameters": {
@@ -1541,43 +1541,43 @@
           "outputs": {
             "vnetId": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.vnetId.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.vnetId.value]"
             },
             "vnetName": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.vnetName.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.vnetName.value]"
             },
             "bastionFqdn": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-bastion-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.bastionFqdn.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-bastion-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.bastionFqdn.value]"
             },
             "external1SubnetId": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.external1SubnetId.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.external1SubnetId.value]"
             },
             "external2SubnetId": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.external2SubnetId.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.external2SubnetId.value]"
             },
             "dcVmName": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-dc-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.dcVmName.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-dc-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.dcVmName.value]"
             },
             "dcExternal1Ip": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-dc-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.dcExternal1Ip.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-dc-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.dcExternal1Ip.value]"
             },
             "keyVaultName": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultName.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2022-09-01').outputs.keyVaultName.value]"
             },
             "keyVaultId": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultId.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2022-09-01').outputs.keyVaultId.value]"
             },
             "keyVaultUrl": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultUrl.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2022-09-01').outputs.keyVaultUrl.value]"
             },
             "domainName": {
               "type": "string",
@@ -1593,7 +1593,7 @@
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2025-04-01",
+      "apiVersion": "2022-09-01",
       "name": "[format('{0}-phase2', parameters('environmentPrefix'))]",
       "properties": {
         "expressionEvaluationOptions": {
@@ -1638,10 +1638,10 @@
             "value": "[parameters('sutCustomImageId')]"
           },
           "external1SubnetId": {
-            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.external1SubnetId.value]"
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2022-09-01').outputs.external1SubnetId.value]"
           },
           "external2SubnetId": {
-            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.external2SubnetId.value]"
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2022-09-01').outputs.external2SubnetId.value]"
           },
           "driverExternal1Ip": {
             "value": "[parameters('driverExternal1Ip')]"
@@ -1656,7 +1656,7 @@
             "value": "[parameters('sutExternal2Ip')]"
           },
           "dcExternal1Ip": {
-            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.dcExternal1Ip.value]"
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2022-09-01').outputs.dcExternal1Ip.value]"
           },
           "dcExternal2Ip": {
             "value": "[parameters('dcExternal2Ip')]"
@@ -1680,8 +1680,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.41.2.15936",
-              "templateHash": "17784425351487672892"
+              "version": "0.37.4.10188",
+              "templateHash": "16085331461362254135"
             }
           },
           "parameters": {
@@ -1881,7 +1881,7 @@
           "resources": [
             {
               "type": "Microsoft.Resources/deployments",
-              "apiVersion": "2025-04-01",
+              "apiVersion": "2022-09-01",
               "name": "[format('{0}-computers-deployment', parameters('environmentPrefix'))]",
               "properties": {
                 "expressionEvaluationOptions": {
@@ -1965,8 +1965,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.41.2.15936",
-                      "templateHash": "6374145047257475073"
+                      "version": "0.37.4.10188",
+                      "templateHash": "14092105801875455658"
                     }
                   },
                   "parameters": {
@@ -2475,7 +2475,7 @@
             {
               "condition": "[parameters('configureGuests')]",
               "type": "Microsoft.Resources/deployments",
-              "apiVersion": "2025-04-01",
+              "apiVersion": "2022-09-01",
               "name": "[format('{0}-computers-configuration', parameters('environmentPrefix'))]",
               "properties": {
                 "expressionEvaluationOptions": {
@@ -2487,10 +2487,10 @@
                     "value": "[parameters('location')]"
                   },
                   "driverVmName": {
-                    "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.driverVmName.value]"
+                    "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.driverVmName.value]"
                   },
                   "sutVmName": {
-                    "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.sutVmName.value]"
+                    "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.sutVmName.value]"
                   },
                   "adminPassword": {
                     "value": "[parameters('adminPassword')]"
@@ -2508,8 +2508,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.41.2.15936",
-                      "templateHash": "3127095386937543630"
+                      "version": "0.37.4.10188",
+                      "templateHash": "3576722597818981056"
                     }
                   },
                   "parameters": {
@@ -2628,19 +2628,19 @@
           "outputs": {
             "driverVmName": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.driverVmName.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.driverVmName.value]"
             },
             "sutVmName": {
               "type": "string",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.sutVmName.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.sutVmName.value]"
             },
             "driverPrivateIps": {
               "type": "array",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.driverPrivateIps.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.driverPrivateIps.value]"
             },
             "sutPrivateIps": {
               "type": "array",
-              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.sutPrivateIps.value]"
+              "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.sutPrivateIps.value]"
             }
           }
         }
@@ -2653,47 +2653,47 @@
   "outputs": {
     "vnetId": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.vnetId.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2022-09-01').outputs.vnetId.value]"
     },
     "vnetName": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.vnetName.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2022-09-01').outputs.vnetName.value]"
     },
     "bastionFqdn": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.bastionFqdn.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2022-09-01').outputs.bastionFqdn.value]"
     },
     "dcVmName": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.dcVmName.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2022-09-01').outputs.dcVmName.value]"
     },
     "driverVmName": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2025-04-01').outputs.driverVmName.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2022-09-01').outputs.driverVmName.value]"
     },
     "sutVmName": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2025-04-01').outputs.sutVmName.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2022-09-01').outputs.sutVmName.value]"
     },
     "driverPrivateIps": {
       "type": "array",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2025-04-01').outputs.driverPrivateIps.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2022-09-01').outputs.driverPrivateIps.value]"
     },
     "sutPrivateIps": {
       "type": "array",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2025-04-01').outputs.sutPrivateIps.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2022-09-01').outputs.sutPrivateIps.value]"
     },
     "keyVaultName": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultName.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2022-09-01').outputs.keyVaultName.value]"
     },
     "keyVaultId": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultId.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2022-09-01').outputs.keyVaultId.value]"
     },
     "keyVaultUrl": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultUrl.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2022-09-01').outputs.keyVaultUrl.value]"
     },
     "domainName": {
       "type": "string",
