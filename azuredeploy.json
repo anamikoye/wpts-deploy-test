@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.41.2.15936",
-      "templateHash": "13089998476105425887"
+      "version": "0.37.4.10188",
+      "templateHash": "270385485103266842"
     }
   },
   "parameters": {
@@ -236,7 +236,7 @@
   "resources": [
     {
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2025-04-01",
+      "apiVersion": "2022-09-01",
       "name": "[format('{0}-disk-encryption-vault', parameters('environmentPrefix'))]",
       "properties": {
         "expressionEvaluationOptions": {
@@ -260,8 +260,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.41.2.15936",
-              "templateHash": "4607274212381451172"
+              "version": "0.37.4.10188",
+              "templateHash": "13929165660475341590"
             }
           },
           "parameters": {
@@ -324,7 +324,7 @@
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2025-04-01",
+      "apiVersion": "2022-09-01",
       "name": "[format('{0}-network-deployment', parameters('environmentPrefix'))]",
       "properties": {
         "expressionEvaluationOptions": {
@@ -357,8 +357,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.41.2.15936",
-              "templateHash": "1709730993994640310"
+              "version": "0.37.4.10188",
+              "templateHash": "17058699627222442794"
             }
           },
           "parameters": {
@@ -700,7 +700,7 @@
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2025-04-01",
+      "apiVersion": "2022-09-01",
       "name": "[format('{0}-bastion-deployment', parameters('environmentPrefix'))]",
       "properties": {
         "expressionEvaluationOptions": {
@@ -715,7 +715,7 @@
             "value": "[parameters('environmentPrefix')]"
           },
           "bastionSubnetId": {
-            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.bastionSubnetId.value]"
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.bastionSubnetId.value]"
           },
           "bastionSku": {
             "value": "[parameters('bastionSku')]"
@@ -727,8 +727,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.41.2.15936",
-              "templateHash": "2172508135876233986"
+              "version": "0.37.4.10188",
+              "templateHash": "14919081938689329756"
             }
           },
           "parameters": {
@@ -823,7 +823,7 @@
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2025-04-01",
+      "apiVersion": "2022-09-01",
       "name": "[format('{0}-computers-deployment', parameters('environmentPrefix'))]",
       "properties": {
         "expressionEvaluationOptions": {
@@ -868,10 +868,10 @@
             "value": "[parameters('sutCustomImageId')]"
           },
           "external1SubnetId": {
-            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.external1SubnetId.value]"
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.external1SubnetId.value]"
           },
           "external2SubnetId": {
-            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.external2SubnetId.value]"
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.external2SubnetId.value]"
           },
           "driverExternal1Ip": {
             "value": "[parameters('driverExternal1Ip')]"
@@ -904,8 +904,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.41.2.15936",
-              "templateHash": "3578385120790764368"
+              "version": "0.37.4.10188",
+              "templateHash": "8871940429984136585"
             }
           },
           "parameters": {
@@ -1472,51 +1472,51 @@
   "outputs": {
     "vnetId": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.vnetId.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.vnetId.value]"
     },
     "vnetName": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.vnetName.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-network-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.vnetName.value]"
     },
     "bastionFqdn": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-bastion-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.bastionFqdn.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-bastion-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.bastionFqdn.value]"
     },
     "driverVmId": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.driverVmId.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.driverVmId.value]"
     },
     "sutVmId": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.sutVmId.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.sutVmId.value]"
     },
     "driverVmName": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.driverVmName.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.driverVmName.value]"
     },
     "sutVmName": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.sutVmName.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.sutVmName.value]"
     },
     "driverPrivateIps": {
       "type": "array",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.driverPrivateIps.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.driverPrivateIps.value]"
     },
     "sutPrivateIps": {
       "type": "array",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2025-04-01').outputs.sutPrivateIps.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-computers-deployment', parameters('environmentPrefix'))), '2022-09-01').outputs.sutPrivateIps.value]"
     },
     "keyVaultName": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultName.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2022-09-01').outputs.keyVaultName.value]"
     },
     "keyVaultId": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultId.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2022-09-01').outputs.keyVaultId.value]"
     },
     "keyVaultUrl": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultUrl.value]"
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', format('{0}-disk-encryption-vault', parameters('environmentPrefix'))), '2022-09-01').outputs.keyVaultUrl.value]"
     }
   }
 }
