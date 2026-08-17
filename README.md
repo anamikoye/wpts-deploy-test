@@ -2,7 +2,7 @@
 
 ## Cluster deployment
 
-- [Deploy to Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fanamikoye%2Fwpts-deploy-test%2Fcluster-test-v1%2Fcluster-azuredeploy.json)
+- [Deploy to Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fgithub.com%2Fanamikoye%2Fwpts-deploy-test%2Freleases%2Fdownload%2Fcluster-test-v1%2Fcluster-azuredeploy.json)
 - [Combined ARM template](cluster-azuredeploy.json)
 - [Cluster-Package.zip](https://github.com/anamikoye/wpts-deploy-test/releases/download/cluster-test-v1/Cluster-Package.zip)
 - Package SHA-256: `781D88F2829DAEAB9A7CA9374C564F6161CAEB7E8EBAF6B800EB15C44185B5EA`
