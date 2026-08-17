@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.44.1.10279",
-      "templateHash": "4336826986771137136"
+      "templateHash": "15303068529710819973"
     }
   },
   "parameters": {
@@ -457,7 +457,7 @@
         "timeout": "PT2H",
         "retentionInterval": "P1D",
         "cleanupPreference": "OnSuccess",
-        "arguments": "[format('-ResourceGroupName \"{0}\" -VmNames \"{1},{2}\" -EnableEncryption {3} -KeyVaultUrl \"{4}\" -KeyVaultId \"{5}\"', resourceGroup().name, reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.domainControllerName.value, reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.storageServerName.value, parameters('enableDiskEncryption'), if(parameters('enableDiskEncryption'), reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultUrl.value, 'unused'), if(parameters('enableDiskEncryption'), reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultId.value, 'unused'))]",
+        "arguments": "[format('-ResourceGroupName \"{0}\" -VmNames \"{1},{2}\" -EnableEncryption {3} -KeyVaultUrl \"{4}\" -KeyVaultId \"{5}\"', resourceGroup().name, reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.domainControllerName.value, reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.storageServerName.value, if(parameters('enableDiskEncryption'), 1, 0), if(parameters('enableDiskEncryption'), reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultUrl.value, 'unused'), if(parameters('enableDiskEncryption'), reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultId.value, 'unused'))]",
         "scriptContent": "[variables('encryptionScript')]",
         "forceUpdateTag": "[format('{0}-phase1-encryption', parameters('forceUpdateTag'))]"
       },
@@ -511,7 +511,7 @@
         "timeout": "PT2H",
         "retentionInterval": "P1D",
         "cleanupPreference": "OnSuccess",
-        "arguments": "[format('-ResourceGroupName \"{0}\" -VmNames \"{1},{2},{3}\" -EnableEncryption {4} -KeyVaultUrl \"{5}\" -KeyVaultId \"{6}\"', resourceGroup().name, reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2025-04-01').outputs.node01Name.value, reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2025-04-01').outputs.node02Name.value, reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2025-04-01').outputs.driverComputerName.value, parameters('enableDiskEncryption'), if(parameters('enableDiskEncryption'), reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultUrl.value, 'unused'), if(parameters('enableDiskEncryption'), reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultId.value, 'unused'))]",
+        "arguments": "[format('-ResourceGroupName \"{0}\" -VmNames \"{1},{2},{3}\" -EnableEncryption {4} -KeyVaultUrl \"{5}\" -KeyVaultId \"{6}\"', resourceGroup().name, reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2025-04-01').outputs.node01Name.value, reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2025-04-01').outputs.node02Name.value, reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase2', parameters('environmentPrefix'))), '2025-04-01').outputs.driverComputerName.value, if(parameters('enableDiskEncryption'), 1, 0), if(parameters('enableDiskEncryption'), reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultUrl.value, 'unused'), if(parameters('enableDiskEncryption'), reference(resourceId('Microsoft.Resources/deployments', format('{0}-phase1', parameters('environmentPrefix'))), '2025-04-01').outputs.keyVaultId.value, 'unused'))]",
         "scriptContent": "[variables('encryptionScript')]",
         "forceUpdateTag": "[format('{0}-phase2-encryption', parameters('forceUpdateTag'))]"
       },
